@@ -41,7 +41,7 @@
 
     function preload ()
     {
-        this.load.image('sky', 'assets/sky.png');
+        this.load.image('sky', 'assets/ceu.jpg');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('star', 'assets/star.png');
         this.load.image('bomb', 'assets/bomb.png');
@@ -49,18 +49,23 @@
     }
 
     function create ()
+
     {
-        this.add.image(400, 300, 'sky');
+        this.add.image(0,0, 'sky').setOrigin(0,0);
 
         platforms = this.physics.add.staticGroup();
 
-        platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+        platforms.create(400, 550 , 'ground').setScale(2).refreshBody();
 
-        platforms.create(600, 400, 'ground');
-        platforms.create(50, 250, 'ground');
-        platforms.create(750, 220, 'ground');
+        platforms.create(0, 400, 'ground').setOrigin(0,0).setScale(0.5).refreshBody()//.setOrigin(0,0);
+        // tem que colocar o setOrigin antes do scale e refreshbody
+        platforms.create(600, 300, 'ground'); 
+        
+        platforms.create(0, 160 , 'ground').refreshBody();
 
-        player = this.physics.add.sprite(100, 450, 'dude');
+        console.log(platforms)
+
+        player = this.physics.add.sprite(500, 200, 'dude');
 
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
@@ -86,7 +91,7 @@
         });
 
         cursors = this.input.keyboard.createCursorKeys();
-
+// apartir daqui começa a parte 8 
         stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
@@ -99,10 +104,10 @@
 
         });
 
-        this.physics.add.collider(player, platforms);
+        this.physics.add.collider(player, platforms); // este pedaço é eu usar para colisão dos blocos parede do labirinto com o jogador
         this.physics.add.collider(stars, platforms);
 
-        this.physics.add.overlap(player, stars, collectStar, null, this);
+        this.physics.add.overlap(player, stars, collectStar, null, this); // colisão do jogador com o bloco saida
     }
 
     function update ()
@@ -132,7 +137,7 @@
         }
     }
 
-    function collectStar (player, star)
+    function collectStar (player, star)  // colocou dentro do update pois é algo que vai mudar na tela 
     {
         star.disableBody(true, true);
     }
