@@ -30,3 +30,23 @@
 ###### #a mesma função que detecta quando jogador colide com estrela( tira fisica da estrela tocada e a remove ) é a mesma função que aumenta o score     
 ###### #dentro do update() eu chamo a função que faz isso e esta função n esta dentro do update() 
 ###### # as variaveis devem ser globais logo , devo criar elas dentro do arquivo script e n dentro de alguma função , mas dentro das funões é que altero o valor delas 
+
+
+# 21 mar - 20' começei o exemplo 10
+# adicionei uma atividade 21 no jogo from the ashes parecido com a lógica do baddies feito no exemplo parte 10
+
+##  por exemplo esta funçaão para a pessoa jogadora pensar que é possivel passar mas n semdo possivel pois o bloco pareide apenas fica piscando cor do bloco pareide e branco e assim continua ficando pareide (player.setTint(0xff0000);)
+# `The bombs will of course bounce off the platforms, and if the player hits them we'll call the hitBomb function. All that will do is stop the game and turn the player red:
+
+function hitBomb (player, bomb)
+{
+    this.physics.pause();
+
+    player.setTint(0xff0000);
+
+    player.anims.play('turn');
+
+    gameOver = true;
+}`
+
+# parei aqui neste frase `So far, so good, but we need to release a bomb. `

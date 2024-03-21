@@ -1,4 +1,5 @@
 <!doctype html> 
+<!-- Aqui eu posso aproveitar para fazer a ideia do professor , a minha ideia e a da arthuria -->
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
@@ -65,9 +66,9 @@ function create ()
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
     //  Now let's create some ledges
-    platforms.create(600, 400, 'ground');
-    platforms.create(50, 250, 'ground');
-    platforms.create(750, 220, 'ground');
+    platforms.create(0, 430, 'ground');
+    platforms.create(400, 300, 'ground').setScale(0.5).refreshBody();
+    platforms.create(750, 140, 'ground');
 
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
