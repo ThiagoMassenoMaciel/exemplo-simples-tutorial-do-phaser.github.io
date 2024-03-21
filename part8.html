@@ -108,6 +108,7 @@
         this.physics.add.collider(stars, platforms);
 
         this.physics.add.overlap(player, stars, collectStar, null, this); // colisão do jogador com o bloco saida
+        // se isso é uma coisa que vai mudar porque não é feito no updating ?
     }
 
     function update ()
@@ -139,7 +140,7 @@
 
     function collectStar (player, star)  // colocou dentro do update pois é algo que vai mudar na tela 
     {
-        star.disableBody(true, true);
+        star.disableBody(true, true); //  ( disable physics , remove object when overlaped to player)
     }
 
 </script>
