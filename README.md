@@ -1,4 +1,5 @@
 # aprendendo este [exemplo](https://phaser.io/tutorials/making-your-first-phaser-3-game/part9)
+# ![alt text](image.png)
 # eu entendi que tem que colocar dois tipos diferentes de coisas em locais diferentes 
 # dentro do create - as coisas que não vão mudar
 # dentro do update - as coisas que vão mudar 
@@ -49,4 +50,4 @@ function hitBomb (player, bomb)
     gameOver = true;
 }`
 
-# parei aqui neste frase `So far, so good, but we need to release a bomb. `
+# 22 mar - 18' terminei o exemplo 10
